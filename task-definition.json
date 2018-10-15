@@ -1,0 +1,102 @@
+{
+  "executionRoleArn": null,
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/web-api",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 3000
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "MONGO_HOST",
+          "value": "mongo.local:27017"
+        },
+        {
+          "name": "MONGO_NAME",
+          "value": "heythere"
+        }
+      ],
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": 256,
+      "volumesFrom": [],
+      "image": "654609753095.dkr.ecr.us-east-1.amazonaws.com/express-container:latest",
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "web-api"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": null,
+  "taskRoleArn": null,
+  "compatibilities": [
+    "EC2"
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:654609753095:task-definition/web-api:5",
+  "family": "web-api",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    }
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": null,
+  "cpu": null,
+  "revision": 5,
+  "status": "ACTIVE",
+  "volumes": []
+}
