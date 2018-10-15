@@ -9,4 +9,5 @@ exec docker run \
   --volume "$(pwd)":/tmp/workspace/terraform \
   --volume "$(cd ../.. && pwd)/fargate-backend":/tmp/workspace/fargate-backend \
   --volume "${HOME}/.aws":/root/.aws \
+  --env GITHUB_TOKEN="${GITHUB_TOKEN}" \
   hashicorp/terraform:0.11.8 "${@}"
