@@ -13,18 +13,19 @@ module "fargate" {
 
   name = "fargate-example"
 
+  repo_name  = "fargate-pipeline-example"
+  repo_owner = "jlsan92"
+
   services = {
     api = {
       registry_retention_days = 15
+      logs_retention_days = 14
 
       task_definition = "api.json"
-      task_tag = "latest"
-      cpu = "256"
-      memory = "512"
-
-      # logs_group_name = "iooi-api" # optional
-
-      # replicas = 2
+      task_tag        = "latest"
+      cpu             = "256"
+      memory          = "512"
+      replicas        = 2
     }
   }
 }

@@ -7,7 +7,15 @@
         "containerPort": 3000
       }
     ],
-    "image": "api:latest",
-    "name": "api"
+    "image": "${repository_url}:latest",
+    "name": "${container_name}",
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_group}",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "${container_name}"
+      }
+    }
   }
 ]
