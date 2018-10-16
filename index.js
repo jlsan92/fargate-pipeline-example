@@ -12,15 +12,15 @@ const hostname = os.hostname()
 const app = express()
 const server = app.listen(3000, () => console.log(`Example app listening on port 3000! Host: ${hostname}`))
 
-app.locals.stop = async () => {
-  // await mongoose.disconnect()
-  server.close(() => {
-    process.exit(0)
-  })
-}
+// app.locals.stop = async () => {
+//   await mongoose.disconnect()
+//   server.close(() => {
+//     process.exit(0)
+//   })
+// }
 
-process.on('SIGTERM', app.locals.stop)
-process.on('SIGINT', app.locals.stop)
+// process.on('SIGTERM', app.locals.stop)
+// process.on('SIGINT', app.locals.stop)
 
 //
 
@@ -53,4 +53,4 @@ process.on('SIGINT', app.locals.stop)
 
 // app.get('/health-check', async (req, res) => res.end())
 
-app.get('/', async (req, res) => res.end())
+app.get('/', async (req, res) => res.json({ hostname }))
