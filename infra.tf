@@ -18,14 +18,14 @@ module "fargate" {
 
   services = {
     api = {
-      registry_retention_days = 15
+      registry_retention_count = 15
       logs_retention_days = 14
 
       task_definition = "api.json"
       task_tag        = "latest"
       cpu             = "256"
       memory          = "512"
-      replicas        = 2
+      replicas        = 3
     }
   }
 }
