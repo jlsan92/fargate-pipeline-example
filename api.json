@@ -2,9 +2,9 @@
   {
     "portMappings": [
       {
-        "hostPort": 3000,
+        "hostPort": ${container_port},
         "protocol": "tcp",
-        "containerPort": 3000
+        "containerPort": ${container_port}
       }
     ],
     "image": "${repository_url}:latest",

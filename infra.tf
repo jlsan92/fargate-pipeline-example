@@ -16,16 +16,18 @@ module "fargate" {
   repo_name  = "fargate-pipeline-example"
   repo_owner = "jlsan92"
 
+  # development_mode = true
+
   services = {
     api = {
-      registry_retention_count = 15
-      logs_retention_days = 14
-
       task_definition = "api.json"
-      task_tag        = "latest"
+      container_port  = 3000
       cpu             = "256"
       memory          = "512"
       replicas        = 3
+
+      registry_retention_count = 15
+      logs_retention_days      = 14
     }
   }
 }

@@ -1,10 +1,11 @@
 const express = require('express')
 const os = require('os')
-const mongoose = require('mongoose')
 
-const DB_HOST = process.env.MONGO_HOST || 'localhost:27017'
-const DB_NAME = process.env.MONGO_NAME || 'test'
-const DB_URI = `mongodb://${DB_HOST}/${DB_NAME}`
+// const mongoose = require('mongoose')
+
+// const DB_HOST = process.env.MONGO_HOST || 'localhost:27017'
+// const DB_NAME = process.env.MONGO_NAME || 'test'
+// const DB_URI = `mongodb://${DB_HOST}/${DB_NAME}`
 
 // mongoose.connect(DB_URI, { useNewUrlParser: true })
 
