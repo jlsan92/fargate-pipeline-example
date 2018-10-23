@@ -5,3 +5,7 @@ strv.pem
 .terraform
 
 .DS_Store
+
+*.tfplan
+
+*.tfstate
